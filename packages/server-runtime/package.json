@@ -2,9 +2,9 @@
   "name": "@proj-airi/server-runtime",
   "type": "module",
   "version": "0.7.2-beta.3",
-  "description": "Server runtime implementation for AIRI running in different environments",
+  "description": "Server runtime implementation for NIMARA running in different environments",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
+    "name": "Moeru AI Project NIMARA Team",
     "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },

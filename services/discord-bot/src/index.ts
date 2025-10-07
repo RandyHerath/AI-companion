@@ -13,8 +13,8 @@ async function main() {
   // Create Discord adapter with configuration
   const adapter = new DiscordAdapter({
     discordToken: env.DISCORD_TOKEN || '', // Fallback to env, but will be updated via WebSocket
-    airiToken: env.AIRI_TOKEN || 'abcd',
-    airiUrl: env.AIRI_URL || 'ws://localhost:6121/ws',
+    airiToken: env.NIMARA_TOKEN || 'abcd',
+    airiUrl: env.NIMARA_URL || 'ws://localhost:6121/ws',
   })
 
   await adapter.start()

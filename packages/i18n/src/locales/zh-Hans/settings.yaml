@@ -9,7 +9,7 @@ animations:
     title: 是否使用页面特定过场动画
 dialogs:
   onboarding:
-    title: 欢迎来到 AIRI！
+    title: 欢迎来到 NIMARA！
     description: 让我们设置您的第一个服务来源来开始使用。
     selectProvider: 选择服务来源
     configureProvider: 配置 {provider}
@@ -79,7 +79,7 @@ pages:
     delete: 删除
     delete_card: 删除角色卡
     delete_confirmation: 确定要删除这张角色卡吗？
-    description: 使用 AIRI 角色卡预设
+    description: 使用 NIMARA 角色卡预设
     description_label: 描述
     drop_here: 放开以上传文件
     create_card: 创建新角色卡
@@ -135,7 +135,7 @@ pages:
       model: 声音 / 模型
       voice: 声音 / 声线
     systemprompt: 系统提示词
-    title: AIRI 角色卡
+    title: NIMARA 角色卡
     try_different_search: 尝试使用其他关键词搜索
     upload: 上传
     upload_desc: 点击或拖拽文件到此处上传
@@ -186,7 +186,7 @@ pages:
       description: 一起玩 Factorio！
       title: 异星工厂 Factorio
       enable: 启用异星工厂集成
-      enable-description: 允许AIRI与异星工厂游戏互动
+      enable-description: 允许NIMARA与异星工厂游戏互动
       server-address: 服务器地址
       server-address-description: 异星工厂服务器的IP地址或主机名
       server-address-placeholder: 输入服务器地址（例如：localhost或192.168.1.100）
@@ -200,7 +200,7 @@ pages:
       description: 一起玩 Minecraft！
       title: 我的世界 Minecraft
       enable: 启用我的世界集成
-      enable-description: 允许AIRI与我的世界游戏互动
+      enable-description: 允许NIMARA与我的世界游戏互动
       server-address: 服务器地址
       server-address-description: 我的世界服务器的IP地址或主机名
       server-address-placeholder: 输入服务器地址（例如：localhost或play.example.com）
@@ -227,7 +227,7 @@ pages:
       description: Discord 发消息和语音聊天
       title: Discord
       enable: 启用Discord集成
-      enable-description: 允许AIRI通过Discord进行互动
+      enable-description: 允许NIMARA通过Discord进行互动
       token: 机器人令牌
       token-description: 您的Discord机器人令牌
       token-placeholder: 输入您的Discord机器人令牌
@@ -279,7 +279,7 @@ pages:
       description: X / Twitter 的浏览和使用
       title: X / Twitter
       enable: 启用X / Twitter集成
-      enable-description: 允许AIRI与X / Twitter互动
+      enable-description: 允许NIMARA与X / Twitter互动
       api-key: API密钥
       api-key-description: 您的X / Twitter API密钥
       api-key-placeholder: 输入您的X / Twitter API密钥
@@ -304,7 +304,7 @@ pages:
     helpinfo:
       title: 第一次使用？
       description: |
-        AIRI 需要配置至少一个 {chat} 服务来源，才能正常思考和运作。你可以把它看作是 AIRI 系统中角色的大脑。
+        NIMARA 需要配置至少一个 {chat} 服务来源，才能正常思考和运作。你可以把它看作是 NIMARA 系统中角色的大脑。
     common:
       fields:
         field:
@@ -538,8 +538,8 @@ pages:
         theme-presets:
           presets:
             - colors:
-                - AIRI 绿
-              description: 默认的绿色主题，由 AIRI 为您带来！
+                - NIMARA 绿
+              description: 默认的绿色主题，由 NIMARA 为您带来！
               title: 默认颜色
             - colors:
                 - 灰褐色
@@ -605,7 +605,7 @@ sections:
 theme:
   title: 主题
   description: |
-    切换 AIRI 的基础主题，亮色模式或暗色模式。
+    切换 NIMARA 的基础主题，亮色模式或暗色模式。
 title: 设置
 voices: 声线
 vrm:

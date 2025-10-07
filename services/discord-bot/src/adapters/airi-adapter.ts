@@ -46,7 +46,7 @@ export class DiscordAdapter {
       intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates],
     })
 
-    // Initialize AIRI client
+    // Initialize NIMARA client
     this.airiClient = new AiriClient({
       name: 'discord-bot',
       possibleEvents: [
@@ -122,9 +122,9 @@ export class DiscordAdapter {
       }
     })
 
-    // Handle input from AIRI system
+    // Handle input from NIMARA system
     this.airiClient.onEvent('input:text', async (event) => {
-      log.log('Received input from AIRI system:', event.data.text)
+      log.log('Received input from NIMARA system:', event.data.text)
       // Process Discord-related commands
       // For now, we'll just log the input
     })

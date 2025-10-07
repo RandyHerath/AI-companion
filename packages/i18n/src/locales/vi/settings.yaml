@@ -11,7 +11,7 @@ animations:
     title: Dùng hiệu ứng chuyển cảnh riêng cho từng trang
 dialogs:
   onboarding:
-    title: Chào mừng đến với AIRI!
+    title: Chào mừng đến với NIMARA!
     description: Hãy thiết lập nhà cung cấp AI đầu tiên để bắt đầu.
     selectProvider: Chọn nhà cung cấp AI
     configureProvider: Cấu hình {provider}
@@ -32,7 +32,7 @@ dialogs:
 language:
   title: Ngôn ngữ
   description: >
-    Thay đổi ngôn ngữ giao diện AIRI. Điều này sẽ không ảnh hưởng đến ngôn ngữ
+    Thay đổi ngôn ngữ giao diện NIMARA. Điều này sẽ không ảnh hưởng đến ngôn ngữ
     phản hồi của nhân vật.
 live2d:
   change-model:
@@ -82,7 +82,7 @@ pages:
     delete: Xóa
     delete_card: Xóa thẻ
     delete_confirmation: Bạn có chắc muốn xóa thẻ này?
-    description: Dùng preset thẻ nhân vật AIRI
+    description: Dùng preset thẻ nhân vật NIMARA
     description_label: Mô tả
     drop_here: Kéo vào đây để tải lên
     create_card: Tạo thẻ mới
@@ -142,7 +142,7 @@ pages:
       model: Giọng nói / Mô hình
       voice: Giọng nói / Giọng
     systemprompt: Lời nhắc hệ thống
-    title: Thẻ AIRI
+    title: Thẻ NIMARA
     try_different_search: Hãy thử từ khóa khác
     upload: Tải lên
     upload_desc: Bấm hoặc kéo thả tệp để tải lên
@@ -193,7 +193,7 @@ pages:
       description: Chơi Factorio!
       title: Factorio
       enable: Bật tích hợp Factorio
-      enable-description: Cho phép AIRI tương tác với trò chơi Factorio
+      enable-description: Cho phép NIMARA tương tác với trò chơi Factorio
       server-address: Địa chỉ máy chủ
       server-address-description: Địa chỉ IP hoặc tên máy chủ của máy chủ Factorio
       server-address-placeholder: Nhập địa chỉ máy chủ (ví dụ localhost hoặc 192.168.1.100)
@@ -207,7 +207,7 @@ pages:
       description: Chơi Minecraft!
       title: Minecraft
       enable: Bật tích hợp Minecraft
-      enable-description: Cho phép AIRI tương tác với trò chơi Minecraft
+      enable-description: Cho phép NIMARA tương tác với trò chơi Minecraft
       server-address: Địa chỉ máy chủ
       server-address-description: Địa chỉ IP hoặc tên máy chủ của máy chủ Minecraft
       server-address-placeholder: Nhập địa chỉ máy chủ (ví dụ localhost hoặc play.example.com)
@@ -230,7 +230,7 @@ pages:
       description: Trò chuyện & gọi thoại qua Discord
       title: Discord
       enable: Bật tích hợp Discord
-      enable-description: Cho phép AIRI tương tác qua Discord
+      enable-description: Cho phép NIMARA tương tác qua Discord
       token: Mã token của bot
       token-description: Mã token bot Discord của bạn
       token-placeholder: Nhập mã token bot Discord của bạn
@@ -277,7 +277,7 @@ pages:
       description: Sử Dụng Twitter
       title: X / Twitter
       enable: Bật tích hợp X / Twitter
-      enable-description: Cho phép AIRI tương tác với X / Twitter
+      enable-description: Cho phép NIMARA tương tác với X / Twitter
       api-key: Khóa API
       api-key-description: Khóa API X / Twitter của bạn
       api-key-placeholder: Nhập khóa API X / Twitter của bạn
@@ -304,8 +304,8 @@ pages:
     helpinfo:
       title: Lần đầu tới đây?
       description: >
-        {chat} AIRI cần ít nhất một nhà cung cấp để suy nghĩ và hoạt động đúng cách.
-        Có thể coi nó như bộ não của nhân vật AIRI trong hệ thống.
+        {chat} NIMARA cần ít nhất một nhà cung cấp để suy nghĩ và hoạt động đúng cách.
+        Có thể coi nó như bộ não của nhân vật NIMARA trong hệ thống.
     common:
       fields:
         field:
@@ -528,8 +528,8 @@ pages:
         theme-presets:
           presets:
             - colors:
-                - Xanh AIRI
-              description: Màu xanh đặc trưng mặc định của AIRI
+                - Xanh NIMARA
+              description: Màu xanh đặc trưng mặc định của NIMARA
               title: Màu mặc định
             - colors:
                 - Taupe
@@ -597,7 +597,7 @@ sections:
 theme:
   title: Chủ Đề
   description: |
-    Chuyển đổi chủ đề cơ bản của AIRI, Chế độ Sáng hoặc Chế độ Tối.
+    Chuyển đổi chủ đề cơ bản của NIMARA, Chế độ Sáng hoặc Chế độ Tối.
 title: Cài Đặt
 voices: Giọng Nói
 vrm:

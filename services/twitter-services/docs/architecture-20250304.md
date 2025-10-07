@@ -19,7 +19,7 @@ Twitter Service is a web automation service based on BrowserBase, providing stru
 │                                             │
 │   ┌────────────┐         ┌─────────────┐    │
 │   │            │         │             │    │
-│   │  AIRI Core │         │ Other LLM   │    │
+│   │  NIMARA Core │         │ Other LLM   │    │
 │   │            │         │ Applications│    │
 │   │            │         │             │    │
 │   └──────┬─────┘         └──────┬──────┘    │
@@ -29,7 +29,7 @@ Twitter Service is a web automation service based on BrowserBase, providing stru
 │                  Adapter Layer              │
 │                                             │
 │   ┌────────────┐         ┌─────────────┐    │
-│   │AIRI Adapter│         │ MCP Adapter │    │
+│   │NIMARA Adapter│         │ MCP Adapter │    │
 │   │(@server-sdk)│        │ (HTTP/JSON) │    │
 │   └──────┬─────┘         └──────┬──────┘    │
 └──────────┼─────────────────────┼────────────┘
@@ -68,7 +68,7 @@ Twitter Service is a web automation service based on BrowserBase, providing stru
 - **Browser Automation**: BrowserBase Stagehand, Playwright
 - **HTML Parsing**: unified, rehype-parse, unist-util-visit
 - **API Server**: H3.js, listhen
-- **Adapters**: AIRI Server SDK, MCP SDK
+- **Adapters**: NIMARA Server SDK, MCP SDK
 - **Logging System**: @guiiai/logg
 - **Configuration**: defu (deep merging configurations)
 - **Utility Library**: zod (type validation)
@@ -77,9 +77,9 @@ Twitter Service is a web automation service based on BrowserBase, providing stru
 
 ### 5.1 Adapter Layer
 
-#### 5.1.1 AIRI Adapter
+#### 5.1.1 NIMARA Adapter
 
-Provides integration with the AIRI LLM platform, handling event-driven communication.
+Provides integration with the NIMARA LLM platform, handling event-driven communication.
 
 #### 5.1.2 MCP Adapter
 
@@ -291,27 +291,27 @@ async function main() {
 }
 ```
 
-### 9.2 Integrating as AIRI Module
+### 9.2 Integrating as NIMARA Module
 
 ```typescript
-import { AIRIAdapter, BrowserBaseMCPAdapter, TwitterService } from 'twitter-services'
+import { BrowserBaseMCPAdapter, NIMARAAdapter, TwitterService } from 'twitter-services'
 
-async function startAIRIModule() {
+async function startNIMARAModule() {
   const browser = new BrowserBaseMCPAdapter(process.env.BROWSERBASE_API_KEY)
   await browser.initialize({ headless: true })
 
   const twitter = new TwitterService(browser)
 
-  // Create AIRI adapter
-  const airiAdapter = new AIRIAdapter(twitter, {
-    url: process.env.AIRI_URL,
-    token: process.env.AIRI_TOKEN
+  // Create NIMARA adapter
+  const airiAdapter = new NIMARAAdapter(twitter, {
+    url: process.env.NIMARA_URL,
+    token: process.env.NIMARA_TOKEN
   })
 
   // Start adapter
   await airiAdapter.start()
 
-  console.log('Twitter service running as AIRI module')
+  console.log('Twitter service running as NIMARA module')
 }
 ```
 

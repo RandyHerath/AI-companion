@@ -12,7 +12,7 @@ import { spawn } from 'node:child_process'
 
 const isWindows = process.platform === 'win32'
 
-console.log('🚀 Starting AIRI WebSocket server and Tamagotchi app...\n')
+console.log('🚀 Starting Nimara WebSocket server and Tamagotchi app...\n')
 
 // Start the WebSocket server in the background
 console.log('📡 Starting WebSocket server on port 6121...')

@@ -87,9 +87,9 @@ export function getDefaultConfig(): Config {
     },
     adapters: {
       airi: {
-        url: process.env.AIRI_URL || 'http://localhost:3000',
-        token: process.env.AIRI_TOKEN || '',
-        enabled: process.env.ENABLE_AIRI === 'true',
+        url: process.env.NIMARA_URL || 'http://localhost:3000',
+        token: process.env.NIMARA_TOKEN || '',
+        enabled: process.env.ENABLE_NIMARA === 'true',
       },
       mcp: {
         port: Number(process.env.MCP_PORT || 8080),

@@ -79,8 +79,8 @@ export function initEnv(): void {
   }
 
   config.airi = {
-    wsBaseUrl: getEnvVar('AIRI_WS_BASEURL', defaultConfig.airi.wsBaseUrl),
-    clientName: getEnvVar('AIRI_CLIENT_NAME', defaultConfig.airi.clientName),
+    wsBaseUrl: getEnvVar('NIMARA_WS_BASEURL', defaultConfig.airi.wsBaseUrl),
+    clientName: getEnvVar('NIMARA_CLIENT_NAME', defaultConfig.airi.clientName),
   }
 
   logger.withFields({ config }).log('Environment variables initialized')

@@ -2,9 +2,9 @@
   "name": "@proj-airi/telegram-bot",
   "type": "module",
   "private": true,
-  "description": "Telegram bot for AIRI",
+  "description": "Telegram bot for NIMARA",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
+    "name": "Moeru AI Project NIMARA Team",
     "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },

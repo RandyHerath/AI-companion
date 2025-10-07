@@ -11,7 +11,7 @@ animations:
     title: Use Page Specific Transitions
 dialogs:
   onboarding:
-    title: Welcome to AIRI!
+    title: Welcome to NIMARA!
     description: Let's set up your first AI provider to get started.
     selectProvider: Choose an AI Provider
     configureProvider: Configure {provider}
@@ -35,7 +35,7 @@ dialogs:
 language:
   title: Language
   description: >
-    Change the language of the AIRI interface. This will not affect the language
+    Change the language of the NIMARA interface. This will not affect the language
     of the character's responses.
 live2d:
   change-model:
@@ -85,7 +85,7 @@ pages:
     delete: Delete
     delete_card: Delete Card
     delete_confirmation: Are you sure you want to delete this card?
-    description: Use AIRI character card presets
+    description: Use NIMARA character card presets
     description_label: Description
     drop_here: Drop to upload
     create_card: Create a new Card
@@ -148,7 +148,7 @@ pages:
       model: Speech / Model
       voice: Speech / Voice
     systemprompt: System Prompt
-    title: AIRI Card
+    title: NIMARA Card
     try_different_search: Try a different search term
     upload: Upload
     upload_desc: Click or drag file to upload
@@ -242,7 +242,7 @@ pages:
       description: Playing Factorio!
       title: Factorio
       enable: Enable Factorio Integration
-      enable-description: Allow AIRI to interact with Factorio game
+      enable-description: Allow NIMARA to interact with Factorio game
       server-address: Server Address
       server-address-description: The IP address or hostname of the Factorio server
       server-address-placeholder: Enter server address (e.g., localhost or 192.168.1.100)
@@ -256,7 +256,7 @@ pages:
       description: Playing Minecraft!
       title: Minecraft
       enable: Enable Minecraft Integration
-      enable-description: Allow AIRI to interact with Minecraft game
+      enable-description: Allow NIMARA to interact with Minecraft game
       server-address: Server Address
       server-address-description: The IP address or hostname of the Minecraft server
       server-address-placeholder: Enter server address (e.g., localhost or play.example.com)
@@ -283,7 +283,7 @@ pages:
       description: Chat & voice chat over Discord
       title: Discord
       enable: Enable Discord Integration
-      enable-description: Allow AIRI to interact through Discord
+      enable-description: Allow NIMARA to interact through Discord
       token: Bot Token
       token-description: Your Discord bot token
       token-placeholder: Enter your Discord bot token
@@ -337,7 +337,7 @@ pages:
       description: X / Twitter browsing and usage
       title: X / Twitter
       enable: Enable X / Twitter Integration
-      enable-description: Allow AIRI to interact with X / Twitter
+      enable-description: Allow NIMARA to interact with X / Twitter
       api-key: API Key
       api-key-description: Your X / Twitter API key
       api-key-placeholder: Enter your X / Twitter API key
@@ -364,9 +364,9 @@ pages:
     helpinfo:
       title: First time here?
       description: >
-        AIRI requires at least one {chat} provider to be configured to think,
+        NIMARA requires at least one {chat} provider to be configured to think,
         and behave properly. You could think of it as the brain of the
-        characters living in AIRI system.
+        characters living in NIMARA system.
     common:
       fields:
         field:
@@ -606,8 +606,8 @@ pages:
         theme-presets:
           presets:
             - colors:
-                - AIRI Green
-              description: The default greenish theme color, brought by AIRI to you!
+                - NIMARA Green
+              description: The default greenish theme color, brought by NIMARA to you!
               title: Default Color
             - colors:
                 - Taupe
@@ -675,7 +675,7 @@ sections:
 theme:
   title: Theme
   description: |
-    Switch the base theme of AIRI, Light mode or Dark mode.
+    Switch the base theme of NIMARA, Light mode or Dark mode.
 title: Settings
 voices: Voice
 vrm:

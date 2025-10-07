@@ -2,9 +2,9 @@
   "name": "@proj-airi/discord-bot",
   "type": "module",
   "private": true,
-  "description": "Discord bot for AIRI",
+  "description": "Discord bot for NIMARA",
   "author": {
-    "name": "Moeru AI Project AIRI Team",
+    "name": "Moeru AI Project NIMARA Team",
     "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
