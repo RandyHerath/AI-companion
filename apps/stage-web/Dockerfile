@@ -6,6 +6,8 @@ RUN apt update && apt install -y ca-certificates curl
 RUN update-ca-certificates
 RUN apt update && apt install -y build-essential python3 curl
 
+RUN npm install -g pnpm
+
 RUN corepack enable
 
 COPY . .
@@ -24,3 +26,4 @@ COPY --from=build-stage /app/apps/stage-web/dist /usr/share/nginx/html
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
+
