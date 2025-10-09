@@ -11,8 +11,7 @@ RUN npm install -g pnpm
 RUN corepack enable
 
 COPY . .
-RUN --mount=type=cache,target=/root/.pnpm-store \
-    pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 RUN pnpm -F @proj-airi/stage-web run build && \
     pnpm -F @proj-airi/docs run build:base && \
@@ -26,4 +25,3 @@ COPY --from=build-stage /app/apps/stage-web/dist /usr/share/nginx/html
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
-
