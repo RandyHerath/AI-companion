@@ -11,7 +11,7 @@ RUN npm install -g pnpm
 RUN corepack enable
 
 COPY . .
-RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store \
+RUN --mount=type=cache,target=/root/.pnpm-store \
     pnpm install --frozen-lockfile
 
 RUN pnpm -F @proj-airi/stage-web run build && \
