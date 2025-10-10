@@ -8,9 +8,10 @@ export const useConsciousnessStore = defineStore('consciousness', () => {
   const providersStore = useProvidersStore()
 
   // State
-  const DEFAULT_GEMINI_API_KEY = import.meta.env.VITE_DEFAULT_GEMINI_API_KEY ?? ''
+  const runtimeConfig = typeof window !== 'undefined' ? (window as any).__NIMARA_CONFIG__ ?? {} : {}
+  const DEFAULT_GEMINI_API_KEY = runtimeConfig.defaultGeminiApiKey ?? import.meta.env.VITE_DEFAULT_GEMINI_API_KEY ?? ''
   const DEFAULT_CHAT_PROVIDER = 'google-generative-ai'
-  const DEFAULT_CHAT_MODEL = import.meta.env.VITE_DEFAULT_GEMINI_MODEL ?? 'gemini-1.5-flash-latest'
+  const DEFAULT_CHAT_MODEL = runtimeConfig.defaultGeminiModel ?? import.meta.env.VITE_DEFAULT_GEMINI_MODEL ?? 'gemini-1.5-flash-latest'
   const activeProvider = useLocalStorage(
     'settings/consciousness/active-provider',
     DEFAULT_GEMINI_API_KEY ? DEFAULT_CHAT_PROVIDER : '',

@@ -8,7 +8,8 @@ export const useOnboardingStore = defineStore('onboarding', () => {
   const providersStore = useProvidersStore()
 
   // Track if first-time setup has been completed or skipped
-  const DEFAULT_GEMINI_API_KEY = import.meta.env.VITE_DEFAULT_GEMINI_API_KEY ?? ''
+  const runtimeConfig = typeof window !== 'undefined' ? (window as any).__NIMARA_CONFIG__ ?? {} : {}
+  const DEFAULT_GEMINI_API_KEY = runtimeConfig.defaultGeminiApiKey ?? import.meta.env.VITE_DEFAULT_GEMINI_API_KEY ?? ''
   const hasCompletedSetup = useLocalStorage('onboarding/completed', DEFAULT_GEMINI_API_KEY !== '')
   const hasSkippedSetup = useLocalStorage('onboarding/skipped', false)
 

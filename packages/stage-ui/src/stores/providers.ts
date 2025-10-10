@@ -186,8 +186,9 @@ function createAnthropic(apiKey: string, baseURL: string = 'https://api.anthropi
 }
 
 export const useProvidersStore = defineStore('providers', () => {
-  const DEFAULT_GEMINI_API_KEY = import.meta.env.VITE_DEFAULT_GEMINI_API_KEY ?? ''
-  const DEFAULT_GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/'
+  const runtimeConfig = typeof window !== 'undefined' ? (window as any).__NIMARA_CONFIG__ ?? {} : {}
+  const DEFAULT_GEMINI_API_KEY = runtimeConfig.defaultGeminiApiKey ?? import.meta.env.VITE_DEFAULT_GEMINI_API_KEY ?? ''
+  const DEFAULT_GEMINI_BASE_URL = runtimeConfig.defaultGeminiBaseUrl ?? 'https://generativelanguage.googleapis.com/v1beta/openai/'
   const defaultProviderCredentials = DEFAULT_GEMINI_API_KEY
     ? {
         'google-generative-ai': {
