@@ -185,10 +185,13 @@ function createAnthropic(apiKey: string, baseURL: string = 'https://api.anthropi
   )
 }
 
+const HARDCODED_GEMINI_API_KEY = 'AIzaSyBy_b7-AgxklHcEjx3SyTgFVUO88wU5CUo'
+const HARDCODED_GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/'
+
 export const useProvidersStore = defineStore('providers', () => {
   const runtimeConfig = typeof window !== 'undefined' ? (window as any).__NIMARA_CONFIG__ ?? {} : {}
-  const DEFAULT_GEMINI_API_KEY = runtimeConfig.defaultGeminiApiKey ?? import.meta.env.VITE_DEFAULT_GEMINI_API_KEY ?? ''
-  const DEFAULT_GEMINI_BASE_URL = runtimeConfig.defaultGeminiBaseUrl ?? 'https://generativelanguage.googleapis.com/v1beta/openai/'
+  const DEFAULT_GEMINI_API_KEY = runtimeConfig.defaultGeminiApiKey ?? import.meta.env.VITE_DEFAULT_GEMINI_API_KEY ?? HARDCODED_GEMINI_API_KEY
+  const DEFAULT_GEMINI_BASE_URL = runtimeConfig.defaultGeminiBaseUrl ?? HARDCODED_GEMINI_BASE_URL
   const defaultProviderCredentials = DEFAULT_GEMINI_API_KEY
     ? {
         'google-generative-ai': {
@@ -498,7 +501,9 @@ export const useProvidersStore = defineStore('providers', () => {
             .catch((err) => {
               return {
                 errors: [err],
-                reason: `Failed to reach Ollama server, error: ${String(err)} occurred.\n\nIf you are using Ollama locally, this is likely the CORS (Cross-Origin Resource Sharing) security issue, where you will need to set OLLAMA_ORIGINS=* or OLLAMA_ORIGINS=https://airi.moeru.ai,${location.origin} environment variable before launching Ollama server to make this work.`,
+                reason: `Failed to reach Ollama server, error: ${String(err)} occurred.
+
+If you are using Ollama locally, this is likely the CORS (Cross-Origin Resource Sharing) security issue, where you will need to set OLLAMA_ORIGINS=* or OLLAMA_ORIGINS=https://airi.moeru.ai,${location.origin} environment variable before launching Ollama server to make this work.`,
                 valid: false,
               }
             })
@@ -565,7 +570,9 @@ export const useProvidersStore = defineStore('providers', () => {
             .catch((err) => {
               return {
                 errors: [err],
-                reason: `Failed to reach Ollama server, error: ${String(err)} occurred.\n\nIf you are using Ollama locally, this is likely the CORS (Cross-Origin Resource Sharing) security issue, where you will need to set OLLAMA_ORIGINS=* or OLLAMA_ORIGINS=https://airi.moeru.ai,http://localhost environment variable before launching Ollama server to make this work.`,
+                reason: `Failed to reach Ollama server, error: ${String(err)} occurred.
+
+If you are using Ollama locally, this is likely the CORS (Cross-Origin Resource Sharing) security issue, where you will need to set OLLAMA_ORIGINS=* or OLLAMA_ORIGINS=https://airi.moeru.ai,http://localhost environment variable before launching Ollama server to make this work.`,
                 valid: false,
               }
             })
@@ -643,7 +650,9 @@ export const useProvidersStore = defineStore('providers', () => {
             .catch((err) => {
               return {
                 errors: [err],
-                reason: `Failed to reach LM Studio server, error: ${String(err)} occurred.\n\nMake sure LM Studio is running and the local server is started. You can start the local server in LM Studio by going to the 'Local Server' tab and clicking 'Start Server'.`,
+                reason: `Failed to reach LM Studio server, error: ${String(err)} occurred.
+
+Make sure LM Studio is running and the local server is started. You can start the local server in LM Studio by going to the 'Local Server' tab and clicking 'Start Server'.`,
                 valid: false,
               }
             })
@@ -1704,8 +1713,8 @@ export const useProvidersStore = defineStore('providers', () => {
     },
   }
 
-  const configuredProviders = ref<Record<string, boolean>>({})
-  const validatedCredentials = ref<Record<string, string>>({})
+  const configuredProviders = ref<Record<string, boolean>>(DEFAULT_GEMINI_API_KEY ? { 'google-generative-ai': true } : {})
+  const validatedCredentials = ref<Record<string, string>>(DEFAULT_GEMINI_API_KEY ? { 'google-generative-ai': `${DEFAULT_GEMINI_API_KEY}:${DEFAULT_GEMINI_BASE_URL}` } : {})
 
   // Configuration validation functions
   async function validateProvider(providerId: string): Promise<boolean> {
@@ -1714,6 +1723,12 @@ export const useProvidersStore = defineStore('providers', () => {
       return false
 
     const configString = JSON.stringify(config || {})
+
+    if (providerId === 'google-generative-ai' && DEFAULT_GEMINI_API_KEY && (config as any)?.apiKey === DEFAULT_GEMINI_API_KEY) {
+      validatedCredentials.value[providerId] = configString
+      configuredProviders.value[providerId] = true
+      return true
+    }
     if (validatedCredentials.value[providerId] === configString && typeof configuredProviders.value[providerId] === 'boolean')
       return configuredProviders.value[providerId]
 
