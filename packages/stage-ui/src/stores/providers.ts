@@ -186,7 +186,7 @@ function createAnthropic(apiKey: string, baseURL: string = 'https://api.anthropi
 }
 
 const HARDCODED_GEMINI_API_KEY = 'AIzaSyBy_b7-AgxklHcEjx3SyTgFVUO88wU5CUo'
-const HARDCODED_GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/'
+const HARDCODED_GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/'
 
 export const useProvidersStore = defineStore('providers', () => {
   const runtimeConfig = typeof window !== 'undefined' ? (window as any).__NIMARA_CONFIG__ ?? {} : {}
@@ -893,7 +893,7 @@ Make sure LM Studio is running and the local server is started. You can start th
       descriptionKey: 'settings.pages.providers.provider.google-generative-ai.description',
       icon: 'i-lobe-icons:gemini',
       description: 'ai.google.dev',
-      defaultBaseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai/',
+      defaultBaseUrl: 'https://generativelanguage.googleapis.com/',
       creator: createGoogleGenerativeAI,
       validation: ['health', 'model_list'],
     }),
