@@ -4,11 +4,15 @@ import { computed, nextTick, ref } from 'vue'
 
 import { useProvidersStore } from './providers'
 
+const HARDCODED_GEMINI_API_KEY = 'AIzaSyBy_b7-AgxklHcEjx3SyTgFVUO88wU5CUo'
+
 export const useOnboardingStore = defineStore('onboarding', () => {
   const providersStore = useProvidersStore()
 
   // Track if first-time setup has been completed or skipped
-  const hasCompletedSetup = useLocalStorage('onboarding/completed', false)
+  const runtimeConfig = typeof window !== 'undefined' ? (window as any).__NIMARA_CONFIG__ ?? {} : {}
+  const DEFAULT_GEMINI_API_KEY = runtimeConfig.defaultGeminiApiKey ?? import.meta.env.VITE_DEFAULT_GEMINI_API_KEY ?? HARDCODED_GEMINI_API_KEY
+  const hasCompletedSetup = useLocalStorage('onboarding/completed', DEFAULT_GEMINI_API_KEY !== '')
   const hasSkippedSetup = useLocalStorage('onboarding/skipped', false)
 
   // Track if we should show the setup dialog
@@ -39,6 +43,13 @@ export const useOnboardingStore = defineStore('onboarding', () => {
 
   // Initialize setup check
   async function initializeSetupCheck() {
+    if (DEFAULT_GEMINI_API_KEY) {
+      hasCompletedSetup.value = true
+      hasSkippedSetup.value = false
+      shouldShowSetup.value = false
+      return
+    }
+
     if (needsOnboarding.value) {
       // Use nextTick to ensure the app is fully rendered before showing dialog
       await nextTick()

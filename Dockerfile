@@ -1,5 +1,10 @@
 FROM node:24-trixie AS build-stage
 
+ARG VITE_DEFAULT_GEMINI_API_KEY=""
+ARG VITE_DEFAULT_GEMINI_MODEL=""
+ENV VITE_DEFAULT_GEMINI_API_KEY=$VITE_DEFAULT_GEMINI_API_KEY
+ENV VITE_DEFAULT_GEMINI_MODEL=$VITE_DEFAULT_GEMINI_MODEL
+
 WORKDIR /app
 
 RUN apt update && apt install -y ca-certificates curl
@@ -7,7 +12,6 @@ RUN update-ca-certificates
 RUN apt update && apt install -y build-essential python3 curl
 
 RUN npm install -g pnpm
-
 RUN corepack enable
 
 COPY . .
