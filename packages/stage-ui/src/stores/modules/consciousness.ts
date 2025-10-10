@@ -5,7 +5,7 @@ import { computed, ref } from 'vue'
 import { useProvidersStore } from '../providers'
 
 const HARDCODED_GEMINI_API_KEY = 'AIzaSyBy_b7-AgxklHcEjx3SyTgFVUO88wU5CUo'
-const HARDCODED_GEMINI_MODEL = 'gemini-1.5-flash-latest'
+const HARDCODED_GEMINI_MODEL = 'gemini-1.5-pro-latest'
 
 export const useConsciousnessStore = defineStore('consciousness', () => {
   const providersStore = useProvidersStore()
